@@ -3,7 +3,7 @@
 
 @main
 struct swift_sakura_internet_app_run_playground {
-    static func main() {
-        print("Hello, world!")
-    }
+  static func main() {
+    print("Hello, world!")
+  }
 }

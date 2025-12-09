@@ -4,12 +4,12 @@
 import PackageDescription
 
 let package = Package(
-    name: "swift-sakura-internet-app-run-playground",
-    targets: [
-        // Targets are the basic building blocks of a package, defining a module or a test suite.
-        // Targets can depend on other targets in this package and products from dependencies.
-        .executableTarget(
-            name: "swift-sakura-internet-app-run-playground"
-        ),
-    ]
+  name: "swift-sakura-internet-app-run-playground",
+  targets: [
+    // Targets are the basic building blocks of a package, defining a module or a test suite.
+    // Targets can depend on other targets in this package and products from dependencies.
+    .executableTarget(
+      name: "swift-sakura-internet-app-run-playground"
+    )
+  ]
 )
