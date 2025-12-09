@@ -1,7 +1,7 @@
 terraform {
   required_providers {
     sakuracloud = {
-      source = "sacloud/sakuracloud"
+      source  = "sacloud/sakuracloud"
       version = "2.33.0"
     }
   }
@@ -9,7 +9,7 @@ terraform {
 
 provider "sakuracloud" {}
 
-variable user {
+variable "user" {
   type = object({
     name       = string
     password   = string
@@ -23,8 +23,8 @@ resource "sakuracloud_container_registry" "swift_app_run" {
   subdomain_label = "swift-app-run"
 
   user {
-    name = var.user.name
-    password = var.user.password
+    name       = var.user.name
+    password   = var.user.password
     permission = var.user.permission
   }
 }
