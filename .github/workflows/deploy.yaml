@@ -29,4 +29,4 @@ jobs:
           cache-from: type=gha
           cache-to: type=gha,mode=max
           push: true
-          tags: swift-app-run:latest
+          tags: swift-app-run.sakuracr.jp/lemo-nade/swift-app-run:latest
