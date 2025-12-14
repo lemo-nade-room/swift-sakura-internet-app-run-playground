@@ -25,5 +25,8 @@ jobs:
 
       - uses: docker/build-push-action@v6
         with:
+          file: Infra/Sakura/App/Dockerfile
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
           push: true
           tags: swift-app-run:latest
