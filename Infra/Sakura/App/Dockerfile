@@ -11,7 +11,7 @@ RUN export DEBIAN_FRONTEND=noninteractive DEBCONF_NONINTERACTIVE_SEEN=true \
 WORKDIR /build
 
 RUN mkdir /staging
-RUN --mount=type=bind,source=.,target=/src \
+RUN --mount=type=bind,source=.,target=/build \
     --mount=type=cache,target=/tmp/swift-build \
     export BUILD_PATH=/tmp/swift-build && \
     swift build -c release \
