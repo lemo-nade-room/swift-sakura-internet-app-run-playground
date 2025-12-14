@@ -11,12 +11,12 @@ RUN export DEBIAN_FRONTEND=noninteractive DEBCONF_NONINTERACTIVE_SEEN=true \
 WORKDIR /build
 
 RUN mkdir /staging
-RUN --mount=type=bind,source=.,target=/src,readonly \
+RUN --mount=type=bind,source=.,target=/src \
     --mount=type=cache,target=/tmp/swift-build \
     export BUILD_PATH=/tmp/swift-build && \
     swift build -c release \
         --product App \
-        --build-path $BUILD_PATH \
+        --build-path "$BUILD_PATH" \
         --static-swift-stdlib \
         -Xlinker -ljemalloc && \
     cp "$(swift build -c release --build-path $BUILD_PATH --show-bin-path)/App" /staging
