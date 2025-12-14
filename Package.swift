@@ -1,15 +1,37 @@
 // swift-tools-version: 6.2
-// The swift-tools-version declares the minimum version of Swift required to build this package.
-
 import PackageDescription
 
 let package = Package(
-  name: "swift-sakura-internet-app-run-playground",
+  name: "app-run-playground",
+  platforms: [.macOS(.v26)],
+  dependencies: [
+    .package(url: "https://github.com/vapor/vapor.git", from: "4.0.0")
+  ],
   targets: [
-    // Targets are the basic building blocks of a package, defining a module or a test suite.
-    // Targets can depend on other targets in this package and products from dependencies.
     .executableTarget(
-      name: "swift-sakura-internet-app-run-playground"
-    )
-  ]
+      name: "App",
+      dependencies: [
+        .product(name: "Vapor", package: "vapor")
+      ],
+      swiftSettings: swiftSettings,
+    ),
+    .testTarget(
+      name: "AppTests",
+      dependencies: [
+        .target(name: "App"),
+
+        .product(name: "VaporTesting", package: "vapor"),
+      ],
+      swiftSettings: swiftSettings,
+    ),
+  ],
+  swiftLanguageModes: [.v6],
 )
+var swiftSettings: [SwiftSetting] {
+  [
+    .enableUpcomingFeature("NonisolatedNonsendingByDefault"),
+    .enableUpcomingFeature("NonescapableTypes"),
+    .enableUpcomingFeature("ExistentialAny"),
+    .enableUpcomingFeature("InternalImportsByDefault"),
+  ]
+}
