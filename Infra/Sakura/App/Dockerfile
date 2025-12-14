@@ -13,7 +13,7 @@ WORKDIR /build
 RUN mkdir /staging
 RUN --mount=type=bind,source=.,target=/src,readonly \
     --mount=type=cache,target=/tmp/swift-build \
-    BUILD_PATH=/tmp/swift-build \
+    export BUILD_PATH=/tmp/swift-build && \
     swift build -c release \
         --product App \
         --build-path $BUILD_PATH \
