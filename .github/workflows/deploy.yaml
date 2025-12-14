@@ -17,7 +17,7 @@ jobs:
 
       - uses: docker/login-action@v3
         with:
-          registry: swift-app-run.sakuracr.jp
+          registry: swift-app-run-2.sakuracr.jp
           username: ${{ vars.SAKURA_CLOUD_USER }}
           password: ${{ secrets.SAKURA_CLOUD_PASSWORD }}
 
@@ -29,4 +29,4 @@ jobs:
           cache-from: type=gha
           cache-to: type=gha,mode=max
           push: true
-          tags: swift-app-run.sakuracr.jp/lemo-nade/swift-app-run:latest
+          tags: swift-app-run-2.sakuracr.jp/lemo-nade/swift-app-run:latest

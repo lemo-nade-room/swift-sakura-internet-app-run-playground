@@ -20,7 +20,7 @@ variable "user" {
 resource "sakuracloud_container_registry" "swift_app_run" {
   name            = "swift-app-run"
   access_level    = "readwrite"
-  subdomain_label = "swift-app-run"
+  subdomain_label = "swift-app-run-2"
 
   user {
     name       = var.user.name

@@ -1,4 +1,3 @@
-
 ## バージョン
 
 - Swift 6.2.1
@@ -11,5 +10,13 @@
 
 ## 料金
 
-コンテナレジストリ: 
+コンテナレジストリ:
+
 - ストレージ5GiB/1レジストリ: 220円/月
+
+```shell
+docker buildx build -f Infra/Sakura/App/Dockerfile .
+```
+
+ログとメトリクスはコントロールパネルから初回に有効化する必要がある
+https://secure.sakura.ad.jp/apprun/shared/applications
